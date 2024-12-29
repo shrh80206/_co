@@ -1,0 +1,31 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/2/Inc16.hdl
+/**
+ * 16-bit incrementer:
+ * out = in + 1
+ */
+CHIP Inc16 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    //// Replace this comment with your code.
+    HalfAdder(a = in[0], b = true, sum = out[0], carry = Acarry);
+    HalfAdder(a = in[1], b = Acarry, sum = out[1], carry = Bcarry);
+    HalfAdder(a = in[2], b = Bcarry, sum = out[2], carry = Ccarry);
+    HalfAdder(a = in[3], b = Ccarry, sum = out[3], carry = Dcarry);
+    HalfAdder(a = in[4], b = Dcarry, sum = out[4], carry = Ecarry);
+    HalfAdder(a = in[5], b = Ecarry, sum = out[5], carry = Fcarry);
+    HalfAdder(a = in[6], b = Fcarry, sum = out[6], carry = Gcarry);
+    HalfAdder(a = in[7], b = Gcarry, sum = out[7], carry = Hcarry);
+    HalfAdder(a = in[8], b = Hcarry, sum = out[8], carry = Icarry);
+    HalfAdder(a = in[9], b = Icarry, sum = out[9], carry = Jcarry);
+    HalfAdder(a = in[10], b = Jcarry, sum = out[10], carry = Kcarry);
+    HalfAdder(a = in[11], b = Kcarry, sum = out[11], carry = Lcarry);
+    HalfAdder(a = in[12], b = Lcarry, sum = out[12], carry = Mcarry);
+    HalfAdder(a = in[13], b = Mcarry, sum = out[13], carry = Ncarry);
+    HalfAdder(a = in[14], b = Ncarry, sum = out[14], carry = Ocarry);
+    HalfAdder(a = in[15], b = Ocarry, sum = out[15], carry = Pcarry);
+}
